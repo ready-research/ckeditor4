@@ -939,7 +939,7 @@
 		// to avoid loosing them (of course, IE related).
 		// Note that we use a different tag for comments, as we need to
 		// transform them when applying filters.
-		data = data.replace( ( /<!--[\s\S]*?-->/g ), function( match ) {
+		data = data.replace( ( /<!--(?:(?!<!--[\s\S])*?)-->/g ), function( match ) {
 			return '<!--{cke_tempcomment}' + ( protectedHtml.push( match ) - 1 ) + '-->';
 		} );
 
